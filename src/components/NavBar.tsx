@@ -4,7 +4,7 @@ import "../css/index.css"
 function NavBar() {
     return (
         <div className ="nav-flex" style={{
-            display: "flex", flexDirection: "row", alignContent: "center", flexWrap: "wrap",
+            display: "flex", alignContent: "center", flexWrap: "wrap",
         }}>
             <img src="/me.jpg" alt="Me" style={{
                 height: "200px", width: "auto"
@@ -14,7 +14,7 @@ function NavBar() {
             }}>hello. i am alex.</div>
             <div>
                 <div style={{
-                    display: "flex", flexDirection: "row", justifyContent: "center", marginLeft: "auto", marginRight: "auto"
+                    display: "flex", flexDirection: "row", justifyContent: "center"
                 }}>
                     <Button icon="github.png" title="github" url="https://github.com/Gargant0373" />
                     <Button icon="linkedin.png" title="linkedin" url="https://www.linkedin.com/in/alex-despan-a6a047239/" />
@@ -28,8 +28,7 @@ function NavBar() {
 
 function Button(props: ButtonProps) {
     return (
-        <div style={{
-            width: "100px",
+        <div className="nav-button" style={{
             paddingLeft: "10px",
             paddingRight: "10px",
             textAlign: "center"
