@@ -1,18 +1,20 @@
+import "../css/index.css"
+
 
 function NavBar() {
     return (
-        <div style={{
-            display: "flex", flexDirection: "row", justifyContent: "space-between", alignContent: "center"
+        <div className ="nav-flex" style={{
+            display: "flex", flexDirection: "row", alignContent: "center", flexWrap: "wrap",
         }}>
-            <img src="/github.png" alt="Me" style={{
+            <img src="/me.jpg" alt="Me" style={{
                 height: "200px", width: "auto"
             }} />
             <div style={{
-                fontSize: "30px", marginLeft: "95px", marginTop: "25px"
+                fontSize: "30px", marginTop: "25px"
             }}>hello. i am alex.</div>
             <div>
                 <div style={{
-                    display: "flex", flexDirection: "row", justifyContent: "center"
+                    display: "flex", flexDirection: "row", justifyContent: "center", marginLeft: "auto", marginRight: "auto"
                 }}>
                     <Button icon="github.png" title="github" url="https://github.com/Gargant0373" />
                     <Button icon="linkedin.png" title="linkedin" url="https://www.linkedin.com/in/alex-despan-a6a047239/" />

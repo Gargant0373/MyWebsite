@@ -1,7 +1,6 @@
 import Career from "./components/Career"
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar"
-import "./css/index.css"
 
 function App() {
   return (
