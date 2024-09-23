@@ -107,37 +107,25 @@ const Career: React.FC = () => {
                 const { x, y } = getRandomPosition();
                 const delay = getAnimationDelay(index);
                 return (
-                    <div
-                        key={index}
-                        className="career-dot"
-                        style={{
-                            top: `${y}%`,
-                            left: `${x}%`,
-                            animationDelay: delay,
-                            zIndex: `1`
-                        }}
-                    >
+                    <div className="career-wrapper" key={index} style={{ top: `${y}%`, left: `${x}%` }}>
+                        <div
+                            className="career-dot"
+                            style={{
+                                animationDelay: delay,
+                            }}
+                        ></div>
                         <div
                             className="career-card"
-                            style={{
-                                zIndex: `10`
-                            }}
                             ref={el => (cardsRef.current[index] = el)}
                         >
-                            <h3 style={{
-                                zIndex: `10`
-                            }}>{item.title}</h3>
-                            <p style={{
-                                zIndex: `10`
-                            }}>{item.description}</p>
-                            <span style={{
-                                zIndex: `10`
-                            }}>{item.date}</span>
+                            <h3>{item.title}</h3>
+                            <p>{item.description}</p>
+                            <span>{item.date}</span>
                         </div>
                     </div>
                 );
             })}
-        </section>
+        </section >
     );
 };
 

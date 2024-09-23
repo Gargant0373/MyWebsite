@@ -8,6 +8,10 @@
     padding-top: 20px;
 }
 
+#career .career-wrapper {
+    position: absolute;
+}
+
 #career .career-dot {
     position: absolute;
     width: 20px;
@@ -23,9 +27,10 @@
 
 #career .career-dot:hover {
     transform: scale(1.5);
+    animation-play-state: paused;
 }
 
-#career .career-dot:hover .career-card {
+#career .career-wrapper:hover .career-card {
     opacity: 1;
     transform: translateY(-10px);
     pointer-events: auto;
@@ -42,7 +47,7 @@
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
-    z-index: 10;
+    z-index: 5;
 }
 
 @keyframes float {
@@ -93,17 +98,6 @@
     }
 }
 
-@keyframes cardFloat {
-    0%, 100% {
-        transform: translateY(0);
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateY(-10px);
-        transform: translateX(-10px);
-    }
-}
-
 /* Mobile View */
 @media (max-width: 991px) {
     #career {
@@ -116,14 +110,14 @@
     }
 
     #career h3 {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     #career p {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     #career span {
-        font-size: 8px;
+        font-size: 12px;
     }
 }
