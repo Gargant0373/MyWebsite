@@ -1,26 +1,21 @@
-import Career from "./components/Career"
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar"
+import React from 'react';
+import WelcomeMessage from './components/welcome/WelcomeMessage';
+import Navbar from './components/navbar/Navbar';
+import './styles/global.css';
+import About from './components/about/About';
+import Career from './components/career/Career';
 
-function App() {
-  return (
-    <div style={{
-      minHeight: "100vh",
-      display: "flex", flexDirection: "column", justifyContent: "space-between", alignContent: "space-between"
-    }}>
-      <div style={{
-        flex: 1
-      }}>
-        <NavBar />
-        <Career />
-      </div>
-      <div style={{
-        flex: "none"
-      }}>
-        <Footer />
-      </div>
-    </div>
-  )
-}
+const App: React.FC = () => {
+  return <>
+    <nav id="nav">
+      <Navbar />
+      <WelcomeMessage />
+    </nav>
+    <main>
+      <About />
+      <Career />
+    </main>
+  </>
+};
 
 export default App;

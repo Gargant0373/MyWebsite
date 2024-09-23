@@ -1,0 +1,76 @@
+#welcome-container .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #61dafb;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.message {
+    font-size: 2.5rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    margin: 0 10px;
+}
+
+.message.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#welcome-container .text {
+    transform: rotateX(0) rotateY(-25deg);
+    text-align: center;
+    color: #f3f3f3;
+    position: relative;
+    transition: color 0.4s ease, text-shadow 0.2s ease;
+}
+
+.text:hover {
+    text-shadow: none;
+}
+
+.scroll-text {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    to {
+        transform: translateZ(-2px) translateY(5px)
+    }
+
+    40% {
+        transform: rotateY(180deg) translateZ(-2px) translateY(-35px)
+    }
+
+    60% {
+        transform: translateZ(-2px) translateY(-25px)
+    }
+}
+
+.scroll-more {
+    text-align: center;
+    font-size: 8rem;
+    opacity: 1;
+    transition: opacity .3s ease;
+    font-family: monospace;
+    pointer-events: none;
+    z-index: -1;
+    transform-origin: center;
+    -webkit-animation: bounce 3s cubic-bezier(.37, 0, .21, 1.02) infinite, fonts 5s linear infinite;
+    animation: bounce 3s cubic-bezier(.37, 0, .21, 1.02) infinite, fonts 5s linear infinite;
+    margin-top: 180px;
+}
+
+@media (max-width: 991px) {
+    .scroll-more {
+        margin-top: 0px;
+    }
+}
