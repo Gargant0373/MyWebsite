@@ -44,15 +44,25 @@ const projects: ProjectItem[] = [
 ];
 
 const getRandomOffset = (index: number) => {
-    const offset = Math.floor(Math.random() * 200) + 100;
+    const offset = Math.floor(Math.random() * window.innerWidth * 0.1) + window.innerWidth * 0.05;
     return index % 2 === 0 ? offset : -offset;
 };
 
 const Projects: React.FC = () => {
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [offsets, setOffsets] = useState<number[]>([]);
+    
     useEffect(() => {
         setOffsets(projects.map((_, index) => getRandomOffset(index)));
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setOffsets(projects.map((_, index) => getRandomOffset(index)));
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
@@ -93,7 +103,7 @@ const ProjectCard: React.FC<{ project: ProjectItem; index: number; selectedIndex
     }, [selectedIndex]);
 
     return (
-        <Parallax speed={(index + 1) * 4}>
+        <Parallax speed={(index * 0.7) * 2}>
             <div
                 ref={ref}
                 className={`project-card ${inView ? 'visible' : 'hidden'} ${selectedIndex === index ? 'selected' : ''}`}

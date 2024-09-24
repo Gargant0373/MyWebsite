@@ -5,6 +5,7 @@ import './styles/global.css';
 import About from './components/about/About';
 import Career from './components/career/Career';
 import Projects from './components/projects/Projects';
+import Footer from './components/footer/Footer';
 
 const App: React.FC = () => {
   return <>
@@ -17,6 +18,7 @@ const App: React.FC = () => {
       <Career />
       <Projects />
     </main>
+    <Footer />
   </>
 };
 

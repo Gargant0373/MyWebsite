@@ -16,6 +16,9 @@ function About() {
     as you've seen above, i am Alex.
     i am studying in the Netherlands at TU Delft.
     i enjoy riding motorcycles, sunshine and playing backgammon.
+    contact me by email gargant0373@gmail.com
+    or LinkedIn alex despan
+    i check both. sometimes.
     `;
 
     useEffect(() => {
