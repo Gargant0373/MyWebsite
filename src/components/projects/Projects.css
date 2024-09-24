@@ -1,32 +1,78 @@
 .projects {
+    position: relative;
+    overflow: hidden;
     padding: 50px 0;
 }
 
-.projects h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+.projects .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.projects .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 80px;
+    position: relative;
+}
+
+.projects .project-card {
+    border-radius: 8px;
+    padding: 20px;
+    color: #fff;
     text-align: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    text-transform: lowercase;
+    width: 180px;
+    position: relative;
 }
 
-.project-item {
-    margin-bottom: 20px;
+.projects .project-card.visible {
+    opacity: 1;
 }
 
-.project-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.projects .project-card.selected {
+    opacity: 1;
 }
 
-.project-item p {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+.projects .project-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #61dafb;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.project-item a {
-    color: #007bff;
-    text-decoration: underline;
+.projects .project-description {
+    max-height: 0;
+    font-size: 1.2rem;
+    color: #ccc;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+    transform: translateY(10px);
+    visibility: hidden;
 }
 
-.project-item a:hover {
-    text-decoration: none;
+.projects .project-card:hover {
+    background-color: #444;
+}
+
+.projects .project-card.selected .project-description {
+    max-height: min-content;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.projects .project-card:hover .project-title {
+    transform: translateY(-10px);
+}
+
+.projects .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
 }

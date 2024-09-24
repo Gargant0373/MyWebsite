@@ -29,3 +29,10 @@ body {
   transition: color 2s ease;
   color: #6868681e;
 }
+
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
