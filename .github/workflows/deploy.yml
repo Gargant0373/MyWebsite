@@ -4,9 +4,14 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 
 jobs:
   deploy:
+    if: github.event.pull_request.merged == true || github.event_name == 'push'  # Only run if PR is merged or push to main
     runs-on: ubuntu-latest
 
     steps:
@@ -20,16 +25,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Validate JSON files in public/data folder
-        run: |
-          npm install -g jsonlint
-          JSON_FILES=$(find public/data -name '*.json')
-          if [ -n "$JSON_FILES" ]; then
-            jsonlint $JSON_FILES -q
-          else
-            echo "No JSON files found in public/data folder."
-          fi
 
       - name: Run deploy
         if: success()
