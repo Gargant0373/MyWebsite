@@ -101,12 +101,33 @@
 /* Mobile View */
 @media (max-width: 991px) {
     #career {
-        height: 100vh;
+        height: auto;
+        padding-bottom: 60px;
     }
 
     #career .career-card {
         width: 140px;
         padding: 7px;
+    }
+
+    #career .career-wrapper {
+        position: static;
+        display: flex;
+        align-items: center;
+        margin: 18px 0;
+    }
+
+    #career .career-dot {
+        position: static;
+        margin-right: 12px;
+        animation: float 5s infinite ease-in-out, colorChange 5s infinite ease-in-out; /* remove scaleAndMove to reduce jitter */
+    }
+
+    #career .career-card {
+        position: static;
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: auto;
     }
 
     #career h3 {
