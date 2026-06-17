@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import "./About.css";
 
 function About() {
@@ -8,6 +8,7 @@ function About() {
     const [isTyping, setIsTyping] = useState(true);
     const [loadingDots, setLoadingDots] = useState("");
     const [startTyping, setStartTyping] = useState(false);
+    const typewriterRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
     const locations = ["estonia?", "romania?", "netherlands?", "all of them?"];
     const ocupations = ["student", "ta", "motorcyclist", "busy man"];
@@ -16,7 +17,7 @@ function About() {
     as you've seen above, i am Alex.
     i am studying in the Netherlands at TU Delft.
     i enjoy riding motorcycles, sunshine and playing backgammon.
-    contact me by email gargant0373@gmail.com
+    contact me by email alex@gargant.dev
     or LinkedIn alex despan
     i check both. sometimes.
     `;
@@ -37,14 +38,23 @@ function About() {
         return () => clearInterval(intervalId);
     }, []);
 
+    const skipTyping = useCallback(() => {
+        if (typewriterRef.current) {
+            clearInterval(typewriterRef.current);
+            typewriterRef.current = null;
+        }
+        const rendered = fullText.split('').reduce((acc, ch) => acc + ch + (ch === '\n' ? '<br />' : ''), '');
+        setText(rendered);
+        setIsTyping(false);
+    }, [fullText]);
+
     useEffect(() => {
         if (!startTyping) return;
 
         let currentText = "";
         let index = 0;
-        const delay = 50;
 
-        const typewriterEffect = setInterval(() => {
+        typewriterRef.current = setInterval(() => {
             if (index < fullText.length) {
                 currentText += fullText[index];
                 if (fullText[index] === '\n') {
@@ -54,11 +64,13 @@ function About() {
                 index++;
             } else {
                 setIsTyping(false);
-                clearInterval(typewriterEffect);
+                if (typewriterRef.current) clearInterval(typewriterRef.current);
             }
-        }, delay);
+        }, 20);
 
-        return () => clearInterval(typewriterEffect);
+        return () => {
+            if (typewriterRef.current) clearInterval(typewriterRef.current);
+        };
     }, [startTyping]);
 
     useEffect(() => {
@@ -107,7 +119,13 @@ function About() {
                 <span className="indent" />loading more<span className="loading">{loadingDots}</span><br />
                 <span className="paranthesis">]</span>
             </div>
-            <div className="text" ref={textRef}>
+            <div
+                className="text"
+                ref={textRef}
+                onClick={isTyping ? skipTyping : undefined}
+                style={isTyping ? { cursor: 'pointer' } : undefined}
+                title={isTyping ? 'Click to skip' : undefined}
+            >
                 <div dangerouslySetInnerHTML={{ __html: text }} />
                 {!isTyping && <span className="cursor">|</span>}
             </div>

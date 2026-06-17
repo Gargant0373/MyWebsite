@@ -4,7 +4,6 @@ import Navbar from './components/navbar/Navbar';
 import './styles/global.css';
 import About from './components/about/About';
 import Career from './components/career/Career';
-import Projects from './components/projects/Projects';
 import Footer from './components/footer/Footer';
 
 const App: React.FC = () => {
@@ -16,7 +15,6 @@ const App: React.FC = () => {
     <main>
       <About />
       <Career />
-      <Projects />
     </main>
     <Footer />
   </>

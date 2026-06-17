@@ -17,7 +17,9 @@
         flex-direction: column;
         align-items: center;
     }
-    .nav-button 
+    .nav-button {
+        width: auto;
+    }
     .career {
         width: 250px;
     }

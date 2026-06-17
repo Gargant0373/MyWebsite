@@ -9,9 +9,9 @@ const Footer: React.FC = () => {
     return (
         <footer className="footer">
             <div className="socials">
-                <FaLinkedinIn className="social" href="www.linkedin.com/in/alex-despan" target="_blank" />
-                <FaInstagram className="social" href="https://www.instagram.com/alexdespan/" target="_blank" />
-                <FaGithub className="social" href="https://github.com/Gargant0373" target="_blank" />
+                <a href="https://www.linkedin.com/in/alex-despan" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn className="social" /></a>
+                <a href="https://www.instagram.com/alexdespan/" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram className="social" /></a>
+                <a href="https://github.com/Gargant0373" target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub className="social" /></a>
             </div>
             <div className="divider" />
             <div className="last">

@@ -8,9 +8,9 @@ export interface CareerItem {
 // Resume-aligned career timeline data
 export const careerData: CareerItem[] = [
   {
-    title: "LLM ChatBot Developer",
+    title: "Data Scientist",
     organization: "TU Delft",
-    description: "migrating legacy rasa framework to an llm-based architecture improving adaptability & response quality.",
+    description: "migrating legacy rasa framework to an ml-based architecture improving adaptability & response quality.",
     date: "2025-present"
   },
   {
@@ -32,7 +32,7 @@ export const careerData: CareerItem[] = [
     date: "2024-2025"
   },
   {
-    title: "LLM Application Developer",
+    title: "Data Scientist",
     organization: "TU Delft",
     description: "retrieval app enabling civil engineering students to query updated course material (rag pattern).",
     date: "2024-2025"
@@ -66,5 +66,11 @@ export const careerData: CareerItem[] = [
     organization: "NGO HeadEst",
     description: "confidence-building & personal development facilitation for ~30 young adults in tallinn.",
     date: "2022"
+  },
+  {
+    title: "Data Science",
+    organization: "Moovement",
+    description: "automatization of data processing pipelines",
+    date: "2025-present"
   }
 ];

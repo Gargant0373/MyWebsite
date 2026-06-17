@@ -40,7 +40,6 @@ const Navbar: React.FC = () => {
             <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
                 <a onClick={() => scrollTo('about')}>About</a>
                 <a onClick={() => scrollTo('career')}>Experience</a>
-                <a onClick={() => scrollTo('projects')}>Projects</a>
             </div>
             <div
                 className="navbar-toggle"

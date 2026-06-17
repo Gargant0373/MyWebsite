@@ -1,3 +1,9 @@
+:focus-visible {
+  outline: 2px solid #45d4fc;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
 body {
   margin: 0;
   color: #fff;

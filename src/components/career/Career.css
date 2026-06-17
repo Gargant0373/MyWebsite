@@ -1,3 +1,20 @@
+.career-hint {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #aaa;
+    margin-bottom: 8px;
+    animation: hintPulse 3s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .career-hint { animation: none; opacity: 0.7; }
+}
+
 #career {
     position: relative;
     width: 100%;
@@ -95,6 +112,12 @@
     }
     100% {
         background-color: #ff6347;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #career .career-dot {
+        animation: colorChange 5s infinite ease-in-out;
     }
 }
 

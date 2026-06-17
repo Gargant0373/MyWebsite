@@ -106,7 +106,7 @@ const Career: React.FC = () => {
     return (
         <section id="career">
             <div className="title glow">experience</div>
-            <div className="subtle">CLICK THE DOTS</div>
+            <div className="career-hint">hover the dots</div>
             {careerData.map((item, index) => {
                 const { x, y } = positions[index];
                 const delay = getAnimationDelay(index);
