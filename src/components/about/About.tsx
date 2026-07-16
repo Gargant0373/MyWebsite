@@ -113,11 +113,19 @@ function About() {
         <section id="about">
             <div className="title glow">about me?</div>
             <div className="object">
-                <span className="keyword">const</span> data = <span className="paranthesis">[</span> <br />
-                <span className="indent" />location: <span className="string">"{location}"</span><span className="paranthesis">,</span><br />
-                <span className="indent" />ocupation: <span className="string">"{ocupation}"</span><span className="paranthesis">,</span><br />
-                <span className="indent" />loading more<span className="loading">{loadingDots}</span><br />
-                <span className="paranthesis">]</span>
+                <div className="window-bar">
+                    <span className="window-dot red" />
+                    <span className="window-dot yellow" />
+                    <span className="window-dot green" />
+                    <span className="window-title">alex.ts</span>
+                </div>
+                <div className="window-body">
+                    <span className="keyword">const</span> data = <span className="paranthesis">[</span> <br />
+                    <span className="indent" />location: <span className="string">"{location}"</span><span className="paranthesis">,</span><br />
+                    <span className="indent" />ocupation: <span className="string">"{ocupation}"</span><span className="paranthesis">,</span><br />
+                    <span className="indent" />loading more<span className="loading">{loadingDots}</span><br />
+                    <span className="paranthesis">]</span>
+                </div>
             </div>
             <div
                 className="text"
